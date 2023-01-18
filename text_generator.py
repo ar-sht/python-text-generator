@@ -3,7 +3,7 @@ import random
 
 input_file = input()
 
-with open(input_file, 'r', encoding='utf-8') as corpus_file:
+with open(input_file, 'r') as corpus_file:
     text = corpus_file.read()
 
 tokenized = regexp_tokenize(text, r"[^\s]+")
@@ -37,4 +37,4 @@ for _ in range(10):
         sentence.append(next_word)
         if len(sentence) >= 5 and (sentence[-1].endswith('.') or sentence[-1].endswith('!') or sentence[-1].endswith('?')):
             break
-    print(" ".join(sentence))
+    print(" ".join(sentence), end="\n\n")
